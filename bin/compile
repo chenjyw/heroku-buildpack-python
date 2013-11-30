@@ -220,9 +220,6 @@ puts-step "Installing dependencies using Pip ($PIP_VERSION)"
 [ ! "$FRESH_PYTHON" ] && bpwatch stop pip_install
 [ "$FRESH_PYTHON" ] && bpwatch stop pip_install_first
 
-# Set AWS CLI config file
-export AWS_CONFIG_FILE=$BUILD_DIR/awscli_config
-
 # Django collectstatic support.
 bpwatch start collectstatic
   source $BIN_DIR/steps/collectstatic
