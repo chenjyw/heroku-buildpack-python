@@ -5,6 +5,10 @@ CACHE_DIR=$2
 
 cd $BUILD_DIR
 
+echo $TARGET_DIR
+
+ls
+
 if [ -d $TARGET_DIR/gettext ]; then
         echo "$PWD/gettext already installed"
         exit 0

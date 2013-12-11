@@ -230,17 +230,6 @@ bpwatch start install_gettext
   source $BIN_DIR/steps/install_gettext $BUILD_DIR $CACHE_DIR
 bpwatch stop install_gettext
 
-echo "BIN_DIR: $BIN_DIR"
-echo "ROOT_DIR: $ROOT_DIR"
-echo "BUILD_DIR: $BUILD_DIR"
-echo "CACHE_DIR: $CACHE_DIR"
-
-# Install GeoIP
-
-# bpwatch start install_geoip
-#   source $BIN_DIR/steps/install_geoip $BUILD_DIR $CACHE_DIR
-# bowatch stop install_geoip
-
 # ### Finalize
 #
 
