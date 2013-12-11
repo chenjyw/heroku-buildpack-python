@@ -5,15 +5,7 @@ CACHE_DIR=$2
 
 cd $BUILD_DIR
 
-echo $TARGET_DIR
-
-ls
-
-if [ -d $TARGET_DIR/gettext ]; then
-        echo "$PWD/gettext already installed"
-        exit 0
-fi
-
+# Does not check if already installed because /app directory appears to built from scratch on each deploy, so /app/gettext must always be copied in
 echo "-----> Installing gettext..."
 curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
 echo "-----> done in $TARGET_DIR/gettext"
