@@ -225,6 +225,18 @@ bpwatch start collectstatic
   source $BIN_DIR/steps/collectstatic
 bpwatch stop collectstatic
 
+# Install gettext
+GETTEXT_TARBALL=https://s3.amazonaws.com/cainsights/utils/gettext.tar
+
+if [ -d $TARGET_DIR/gettext ]; then
+        echo "$PWD/gettext already installed"
+        exit 0
+fi
+
+echo "-----> Installing gettext..."
+curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
+echo "-----> done in $TARGET_DIR/gettext"
+
 # ### Finalize
 #
 
