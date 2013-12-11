@@ -226,16 +226,20 @@ bpwatch start collectstatic
 bpwatch stop collectstatic
 
 # Install gettext
-GETTEXT_TARBALL=https://s3.amazonaws.com/cainsights/utils/gettext.tar.gz
+bpwatch start install_gettext
+  source $BIN_DIR/steps/install_gettext BUILD_DIR CACHE_DIR
+bpwatch stop install_gettext
 
-if [ -d $TARGET_DIR/gettext ]; then
-        echo "$PWD/gettext already installed"
-        exit 0
-fi
+echo "BIN_DIR: $BIN_DIR"
+echo "ROOT_DIR: $ROOT_DIR"
+echo "BUILD_DIR: $BUILD_DIR"
+echo "CACHE_DIR: $CACHE_DIR"
 
-echo "-----> Installing gettext..."
-curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
-echo "-----> done in $TARGET_DIR/gettext"
+# Install GeoIP
+
+# bpwatch start install_geoip
+#   source $BIN_DIR/steps/install_geoip BUILD_DIR CACHE_DIR
+# bowatch stop install_geoip
 
 # ### Finalize
 #
